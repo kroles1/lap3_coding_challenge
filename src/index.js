@@ -1,16 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { createStore } from 'redux';
+import 'semantic-ui-css/semantic.min.css'
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import App from './App'
+import { searchReducer } from './reducers';
+
+
+
+const store = createStore(searchReducer);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+    <Provider store={store}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>,
 );
 
