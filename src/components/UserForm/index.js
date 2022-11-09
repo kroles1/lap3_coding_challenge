@@ -11,13 +11,13 @@ export default function UserForm() {
   const [avatar, setAvatar] = useState("");
   const [userInput, setUserInput] = useState("");
   const dispatch = useDispatch()
-  // useEffect(() => {
-  //   fetch("https://api.github.com/users/example")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setData(data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch("https://api.github.com/users/example")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
   const setData = ({ name, login, followers, public_repos, avatar_url }) => {
     setName(name);
     setUsername(login);
