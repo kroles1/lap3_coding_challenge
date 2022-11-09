@@ -41,6 +41,12 @@ export default function UserForm() {
     dispatch({ type: 'SEARCH', payload: userName})
     window.location.href = `http://localhost:3000/${userName}`    
     }
+
+    const [ display, setDisplay ] = useState('block')
+
+    useEffect(() => {
+        userName === 'example' ? setDisplay('none') : setDisplay('block')
+    }, [userName])
     return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -50,7 +56,7 @@ export default function UserForm() {
         />
         <input type="submit" value="Search" />
       </form>
-      <div className="card">
+      <div className="card" style={{display: display }}>
       <Card>
         <Image src={avatar} wrapped ui={false} />
         <Card.Content>

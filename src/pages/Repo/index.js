@@ -20,7 +20,14 @@ export default function Repo() {
     <>
     <h1>{params.repo}</h1>
     <ul>
+    <li>Name: {repoData.name}</li>
+        <li>URL: {repoData.url}</li>
+        <li>Created at: {repoData.created_at}</li>
+        <li>Last update: {repoData.updated_at}</li>
+        <li>Visibility: {repoData.visibility}</li>
         <li>Forks: {repoData.forks}</li>
+        <li>Watchers: {repoData.watchers_count}</li>
+        <li>Stargazers: {repoData.stargazers_count}</li>
     </ul>
     </>
     
