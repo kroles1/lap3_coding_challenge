@@ -1,0 +1,18 @@
+body {
+background: linear-gradient(to right, #859398, #283048);
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 20px;
+  font-size: 25px;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+
+button {
+    background-color: grey;
+    border-radius: 25px;
+    padding: 5px 5px;
+    line-height: 20px;
+}
