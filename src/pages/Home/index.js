@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchForm } from '../../components';
+import { UserForm } from '../../components';
 import { Outlet } from "react-router-dom";
 
 
@@ -9,7 +9,7 @@ export default function Home() {
             <h1>Home</h1>
             <div>
                 Enter your username
-                <SearchForm />
+                <UserForm />
                 <Outlet />
             </div>
         </>
