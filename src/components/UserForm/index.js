@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Image, Icon } from "semantic-ui-react";
 import { useDispatch } from "react-redux";
+import './userform.css'
 
 export default function UserForm() {
   const [name, setName] = useState("");
@@ -10,13 +11,13 @@ export default function UserForm() {
   const [avatar, setAvatar] = useState("");
   const [userInput, setUserInput] = useState("");
   const dispatch = useDispatch()
-  useEffect(() => {
-    fetch("https://api.github.com/users/example")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://api.github.com/users/example")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //     });
+  // }, []);
   const setData = ({ name, login, followers, public_repos, avatar_url }) => {
     setName(name);
     setUsername(login);
@@ -50,11 +51,12 @@ export default function UserForm() {
     return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
+        <input className="usernameinput"
           type="text"
           onChange={updateInput}
+          placeholder='Enter GitHub username'
         />
-        <input type="submit" value="Search" />
+        <input className="submitbtn" type="submit" value="Search" />
       </form>
       <div className="card" style={{display: display }}>
       <Card>

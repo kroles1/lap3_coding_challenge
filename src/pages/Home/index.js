@@ -9,7 +9,6 @@ export default function Home() {
             <h1>Home</h1>
             <div className='formdiv'>
                 <div className='searchdiv'>
-                Enter your username
                 <UserForm />
                 <Outlet />
                 </div>
