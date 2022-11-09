@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { createStore } from 'redux';
 import 'semantic-ui-css/semantic.min.css'
 
+
 import App from './App'
 import { searchReducer } from './reducers';
 
@@ -20,3 +21,4 @@ root.render(
         </Router>
     </Provider>,
 );
+
