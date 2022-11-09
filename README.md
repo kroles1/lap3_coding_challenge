@@ -1,8 +1,12 @@
-# Getting Started with Create React App
+# Lap 3 Code Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Github repo tracker giving a user an overview of their work without visiting the site itself.
 
-## Available Scripts
+## Installation && Usage
+- Clone or fork this repo
+- Cd into the repo
+- Run `npm install`  
+- Enjoy
 
 In the project directory, you can run:
 
