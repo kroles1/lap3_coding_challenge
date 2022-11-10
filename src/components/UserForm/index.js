@@ -82,7 +82,7 @@ export default function UserForm() {
               icon="search"
               className="submitbtn"
               type="submit"
-              value=" "
+              value=""
             />
           </div>
           <div class="hidden content" id="hiddencontent">Search</div>
