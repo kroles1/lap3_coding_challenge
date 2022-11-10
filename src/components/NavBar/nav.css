@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(to left, #414345, #232526);
+  letter-spacing: 2px;
 }
 
 nav {
@@ -14,3 +15,5 @@ nav {
  border: 2px solid rgb(145, 136, 136);
  color: rgb(145, 136, 136);
 }
+
+
