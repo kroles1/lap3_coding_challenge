@@ -7,4 +7,13 @@ ul {
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    align-content: space-around;
+    margin-top: 20px;
 }
+
+.list {
+    margin-bottom: 10px;
+    height: 400px;
+    overflow-x: scroll;
+}
+  

@@ -15,11 +15,11 @@ const NavBar = () => {
                 </Button.Content>
             </Button>
             <Icon disabled size='big' inverted color='white' name='github square' />
-            <Button size="big" animated>
+            <Button size="big" animated className="home">
                 <NavLink to="/">
                     <Button.Content visible>Home</Button.Content>
                     <Button.Content hidden>
-                        <Icon name='home' />
+                        <Icon color="black" name='home' />
                     </Button.Content>
                 </NavLink> 
             </Button>

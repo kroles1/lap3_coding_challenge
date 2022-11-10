@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { Card, List } from 'semantic-ui-react'
 import './style.css'
 
+
 export default function User() {
     const [repos, setRepos] = useState([])
     const params = useParams()
@@ -26,17 +27,21 @@ export default function User() {
     fetchRepos()
 }, [username])
 
-    
+
     return (
         <div className="repos">
             <List>
-            {names.map((name) => (
-                <List.Item><Card
-                href={`/${params.user}/${name}`}
-                header={name}
-                /></List.Item>
+            
+                 {names.map((name) => (
+                <List.Item>
+                      
+                <Card
+                    href={`/${params.user}/${name}`}
+                    header={name}/>
+                     
+                </List.Item>
                 ))}
-            </List>
+            </List> 
             <Outlet/>
         </div>
     );
