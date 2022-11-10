@@ -38,3 +38,8 @@ border: 2px solid rgb(145, 136, 136);
 #hiddencontent {
     color:antiquewhite
 }
+
+.ui.large.input {
+    font-size: 18px;
+    width: 200px
+}

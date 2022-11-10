@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Image, Icon } from "semantic-ui-react";
 import { useDispatch } from "react-redux";
-import { Input } from "semantic-ui-react";
+import { Input, Dimmer, Loader, Segment } from "semantic-ui-react";
 import "./userform.css";
 
 export default function UserForm() {
@@ -59,14 +59,25 @@ export default function UserForm() {
   useEffect(() => {
     userName === "example" ? setDisplay("none") : setDisplay("block");
   }, [userName]);
+
+  const Loading= () => (
+    <div>
+      <Segment>
+        <Dimmer active>
+          <Loader>Loading</Loader>
+        </Dimmer>
+  
+        <Image src='/images/wireframe/short-paragraph.png' />
+      </Segment>
+    </div>
+  )
+
   return (
     <div>
       <form onSubmit={handleSubmit} className="searchForm">
-        {/* <input className="usernameinput"
-          type="text"
-          onChange={updateInput}
-          placeholder='Enter GitHub username'
-        /> */}
+
+
+
         <Input
           className="usernameinput"
           size="large"
