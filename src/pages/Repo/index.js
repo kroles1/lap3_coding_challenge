@@ -1,11 +1,14 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom'
 import axios from "axios";
+import { useSelector } from 'react-redux';
 
 export default function Repo() {
     const [repoData, setRepoData] = useState([])
     const params = useParams() 
+    const username = useSelector(state => state.username)
+    useEffect(() => {
     const fetchRepo = async() => {
         try {
             const {data} = await axios.get(`https://api.github.com/repos/${params.user}/${params.repo}`)
@@ -16,6 +19,7 @@ export default function Repo() {
         }
     }
     fetchRepo()
+}, [username])
     return (
     <>
     <h1>{params.repo}</h1>
