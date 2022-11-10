@@ -1,0 +1,10 @@
+ul {
+    list-style: none;
+}
+
+.repos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}

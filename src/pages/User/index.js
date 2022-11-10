@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Outlet, useParams } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import { Card } from 'semantic-ui-react'
+import './style.css'
 
 export default function User() {
     const [repos, setRepos] = useState([])
@@ -26,14 +28,14 @@ export default function User() {
 
     
     return (
-        <div>
-            <h1>{params.user}</h1>
-            <ul>        
+        <div className="repos">
+            <ul>
             {names.map((name) => (
-            <li>  
-                <a href={`/${params.user}/${name}`}>{name}</a>
-             </li> 
-            ))}
+                <li><Card
+                href={`/${params.user}/${name}`}
+                header={name}
+                /></li>
+                ))}
             </ul>
             <Outlet/>
         </div>
