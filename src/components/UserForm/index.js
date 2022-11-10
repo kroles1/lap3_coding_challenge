@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Image, Icon } from "semantic-ui-react";
 import { useDispatch } from "react-redux";
+import { Input } from 'semantic-ui-react'
 import './userform.css'
 
 export default function UserForm() {
@@ -10,6 +11,7 @@ export default function UserForm() {
   const [repos, setRepos] = useState("");
   const [avatar, setAvatar] = useState("");
   const [userInput, setUserInput] = useState("");
+  const [html, setHtml] = useState("");
   const dispatch = useDispatch()
   useEffect(() => {
     fetch("https://api.github.com/users/example")
@@ -18,12 +20,13 @@ export default function UserForm() {
         setData(data);
       });
   }, []);
-  const setData = ({ name, login, followers, public_repos, avatar_url }) => {
+  const setData = ({ name, login, followers, public_repos, avatar_url, html_url }) => {
     setName(name);
     setUsername(login);
     setFollowers(followers);
     setRepos(public_repos);
     setAvatar(avatar_url);
+    setHtml(html_url)
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,6 +34,7 @@ export default function UserForm() {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
+        console.log(data);
       });
   }
     const updateInput = (e) => {
@@ -50,13 +54,19 @@ export default function UserForm() {
     }, [userName])
     return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input className="usernameinput"
+      <form onSubmit={handleSubmit} className="searchForm">
+        {/* <input className="usernameinput"
           type="text"
           onChange={updateInput}
           placeholder='Enter GitHub username'
-        />
-        <input className="submitbtn" type="submit" value="Search" />
+        /> */}
+        <Input className="usernameinput"
+          size="large"
+          icon="github"
+          type="text"
+          onChange={updateInput}
+          placeholder='Username' />
+        <Input icon='search' className="submitbtn" type="submit" value="Search" />
       </form>
       <div className="card" style={{display: display }}>
       <Card>
@@ -68,9 +78,9 @@ export default function UserForm() {
           </Card.Meta>
         </Card.Content>
         <Card.Content extra>
-          <a>
-            <Icon name="user" />
-            {followers} Followers
+          <a href={html}>
+            <Icon name="github"  />
+            Visit their Github
           </a>
           </Card.Content>
           <Card.Content extra>
