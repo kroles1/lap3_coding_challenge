@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Outlet, useParams } from "react-router-dom";
 import { useSelector } from 'react-redux';
-import { Card } from 'semantic-ui-react'
+import { Card, List } from 'semantic-ui-react'
 import './style.css'
 
 export default function User() {
@@ -29,14 +29,14 @@ export default function User() {
     
     return (
         <div className="repos">
-            <ul>
+            <List>
             {names.map((name) => (
-                <li><Card
+                <List.Item><Card
                 href={`/${params.user}/${name}`}
                 header={name}
-                /></li>
+                /></List.Item>
                 ))}
-            </ul>
+            </List>
             <Outlet/>
         </div>
     );
