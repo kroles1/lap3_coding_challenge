@@ -1,0 +1,19 @@
+.card {
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.usernameinput {
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 180px
+}
+
+.submitbtn {
+    border-radius: 20px;
+    padding: 5px 10px;
+}
