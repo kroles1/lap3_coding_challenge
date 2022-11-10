@@ -33,3 +33,8 @@
 .ui.icon.input>input {
     border: none;
 }
+
+.ui.card>.content>.description {
+    color: rgb(190, 200, 208);
+}
+
