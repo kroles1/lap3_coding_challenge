@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import { Card } from 'semantic-ui-react'
 import './style.css'
 
+
+
 export default function Repo() {
     const [repoData, setRepoData] = useState([])
     const params = useParams() 
@@ -21,8 +23,10 @@ export default function Repo() {
     }
     fetchRepo()
 }, [username])
+
+
     return (
-    <div className="repo">
+    <div>
     <Card className="card" href={repoData.html_url}>
       <Card.Content>
         <Card.Header>{params.repo}</Card.Header>

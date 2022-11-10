@@ -4,6 +4,7 @@ import { Outlet, useParams } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { Card, List } from 'semantic-ui-react'
 import './style.css'
+import { Dimmer, Loader } from "semantic-ui-react";
 
 
 export default function User() {
@@ -27,9 +28,20 @@ export default function User() {
     fetchRepos()
 }, [username])
 
-
+const [loading, setLoading] = useState(true)
+useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000)
+  }, [])
     return (
         <div className="repos">
+            <div style={{ display: loading ? "block" : "none" }}>
+                <Dimmer active>
+                <Loader>Loading {params.user}'s data</Loader>
+                </Dimmer>
+            </div>
+            <div style={{ display: loading ? "none" : "block" }}>
             <List>
             
                  {names.map((name) => (
@@ -42,6 +54,7 @@ export default function User() {
                 </List.Item>
                 ))}
             </List> 
+            </div>
             <Outlet/>
         </div>
     );
