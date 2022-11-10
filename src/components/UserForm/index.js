@@ -62,10 +62,10 @@ export default function UserForm() {
         /> */}
         <Input className="usernameinput"
           size="large"
-          icon="search"
+          icon="github"
           type="text"
           onChange={updateInput}
-          placeholder='Enter GitHub username' />
+          placeholder='Username' />
         <Input icon='search' className="submitbtn" type="submit" value="Search" />
       </form>
       <div className="card" style={{display: display }}>
