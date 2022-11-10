@@ -14,7 +14,15 @@ const NavBar = () => {
                     <Icon name='arrow left' />
                 </Button.Content>
             </Button>
-            <Button><NavLink to="/">Home</NavLink></Button>
+            <Icon disabled size='big' inverted color='white' name='github square' />
+            <Button size="big" animated>
+                <NavLink to="/">
+                    <Button.Content visible>Home</Button.Content>
+                    <Button.Content hidden>
+                        <Icon name='home' />
+                    </Button.Content>
+                </NavLink> 
+            </Button>
         </nav>
     );
 }
