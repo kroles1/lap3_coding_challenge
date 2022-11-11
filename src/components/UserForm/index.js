@@ -7,7 +7,6 @@ import "./userform.css";
 export default function UserForm() {
   const [name, setName] = useState("");
   const [userName, setUsername] = useState("");
-  const [followers, setFollowers] = useState("");
   const [repos, setRepos] = useState("");
   const [avatar, setAvatar] = useState("");
   const [userInput, setUserInput] = useState("");
@@ -23,14 +22,12 @@ export default function UserForm() {
   const setData = ({
     name,
     login,
-    followers,
     public_repos,
     avatar_url,
     html_url,
   }) => {
     setName(name);
     setUsername(login);
-    setFollowers(followers);
     setRepos(public_repos);
     setAvatar(avatar_url);
     setHtml(html_url);
@@ -41,7 +38,6 @@ export default function UserForm() {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        console.log(data);
       });
   };
   const updateInput = (e) => {

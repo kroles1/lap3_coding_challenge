@@ -20,7 +20,6 @@ export default function User() {
         try {
             const {data} = await axios.get(`https://api.github.com/users/${params.user}/repos`)
             setRepos(data)
-            console.log(data);
         } catch (error) {
             console.log(error)
         }
@@ -43,14 +42,11 @@ useEffect(() => {
             </div>
             <div style={{ display: loading ? "none" : "block" }}>
             <List>
-            
-                 {names.map((name) => (
+                {names.map((name) => (
                 <List.Item>
-                      
-                <Card
+                    <Card
                     href={`/${params.user}/${name}`}
                     header={name}/>
-                     
                 </List.Item>
                 ))}
             </List> 
