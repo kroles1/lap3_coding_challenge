@@ -31,25 +31,39 @@ export default function Repo() {
       <Card.Content>
         <Card.Header>{params.repo}</Card.Header>
         <Card.Description>
-        Name: {repoData.name}
+        NAME: 
+        <br/>
+        {repoData.name}
         </Card.Description>
         <Card.Description>
-        Created at: {repoData.created_at}
+        CREATED AT: 
+        <br/>
+        {repoData.created_at}
         </Card.Description>
         <Card.Description>
-        Last update: {repoData.updated_at}
+        LAST UPDATE: 
+        <br/>
+        {repoData.updated_at}
         </Card.Description>
         <Card.Description>
-        Visibility: {repoData.visibility}
+        VISIBILITY: 
+        <br/>
+        {repoData.visibility}
         </Card.Description>
         <Card.Description>
-        Forks: {repoData.forks}
+        FORKS: 
+        <br/>
+        {repoData.forks}
         </Card.Description>
         <Card.Description>
-        Watchers: {repoData.watchers_count}
+        WATCHERS: 
+        <br/>
+        {repoData.watchers_count}
         </Card.Description>
         <Card.Description>
-        Stargazers: {repoData.stargazers_count}
+        STARGAZERS: 
+        <br/>
+        {repoData.stargazers_count}
         </Card.Description>
       </Card.Content>
     </Card>
